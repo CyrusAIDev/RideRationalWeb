@@ -5,8 +5,7 @@ export const siteConfig = {
   market: "Vancouver",
   nav: [
     { href: "/discover", label: "Discover" },
-    { href: "/teaser", label: "Teaser" },
-    { href: "/trial", label: "Trial" },
-    { href: "/settings", label: "Settings" },
+    { href: "/#how-it-works", label: "How it works" },
+    { href: "/#pricing", label: "Pricing" },
   ],
 };
