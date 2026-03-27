@@ -9,7 +9,8 @@ const securityHeaders = {
     "camera=(), microphone=(), geolocation=(), interest-cohort=()",
 };
 
-export function middleware(_request: NextRequest) {
+export function middleware(request: NextRequest) {
+  void request;
   const response = NextResponse.next();
 
   Object.entries(securityHeaders).forEach(([key, value]) => {

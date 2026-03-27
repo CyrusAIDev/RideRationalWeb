@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="Placeholder photo slot">
+  <rect width="1600" height="900" fill="#121722"/>
+  <rect x="40" y="40" width="1520" height="820" fill="none" stroke="#657289" stroke-width="2" stroke-dasharray="14 10" rx="28" opacity="0.85"/>
+  <text x="800" y="430" text-anchor="middle" fill="#657289" font-family="ui-sans-serif, system-ui, sans-serif" font-size="22" letter-spacing="0.18em">
+    PLACEHOLDER · REAL PHOTOGRAPHY REQUIRED
+  </text>
+  <text x="800" y="472" text-anchor="middle" fill="#4a5568" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" letter-spacing="0.06em">
+    Replace per 22_IMAGE_STRATEGY_AND_ASSET_SYSTEM.md
+  </text>
+</svg>

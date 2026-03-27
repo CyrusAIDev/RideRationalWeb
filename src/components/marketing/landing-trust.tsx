@@ -1,40 +1,53 @@
 import { Ban, Calculator, LayoutGrid } from "lucide-react";
 
+import { getImageBySlot } from "@/content/image-library";
+import { EditorialImageBlock } from "@/components/marketing/editorial-image-block";
+import { SectionEyebrow } from "@/components/marketing/section-eyebrow";
+
 const tiles = [
   {
     icon: LayoutGrid,
-    title: "Not another endless listing rabbit hole.",
-    body: "If you wanted to scroll forever, you would not be here.",
+    title: "Not another listing rabbit hole.",
+    body: "Daily picks—tuned to taste—not endless scrolling.",
   },
   {
     icon: Calculator,
     title: "Not a generic affordability quiz.",
-    body: "Economics matter—but the outcome is still a car you actually want to own.",
+    body: "Economics matter; the outcome is still a car you want.",
   },
   {
     icon: Ban,
     title: "Not a broad marketplace.",
-    body: "Narrow categories, local opportunities, and a daily shortlist tuned to your taste.",
+    body: "Narrow categories. Local opportunities. Email-first.",
   },
 ] as const;
 
 export function LandingTrust() {
+  const trustImage = getImageBySlot("landing-trust");
+
   return (
-    <div className="grid gap-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start lg:gap-12">
-      <div className="space-y-4">
-        <p className="text-[11px] uppercase tracking-[0.22em] text-[color:var(--color-text-dim)]">
-          Built for skepticism
-        </p>
-        <h2 className="text-2xl font-semibold tracking-[-0.03em] text-white sm:text-3xl">
+    <div className="grid gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-start lg:gap-16">
+      <div className="space-y-6">
+        <SectionEyebrow>Built for skepticism</SectionEyebrow>
+        <h2 className="text-2xl font-semibold tracking-[-0.03em] text-white sm:text-3xl lg:text-[2rem]">
           Credible scope. Calm execution.
         </h2>
-        <p className="text-base leading-7 text-[color:var(--color-text-muted)]">
-          RideRational is intentionally narrow: category-aware matching, comfort-zone-aware inputs,
-          and email-first delivery—so the product does the hunting while you stay out of the noise.
+        <p className="max-w-md text-base leading-7 text-[color:var(--color-text-muted)]">
+          Narrow promise: category-aware matching, comfort-zone inputs, email delivery.
         </p>
+        {trustImage ? (
+          <EditorialImageBlock
+            className="hidden lg:block"
+            entry={trustImage}
+            sizes="(max-width: 1280px) 42vw, 520px"
+          />
+        ) : null}
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+      <div className="grid gap-4">
+        {trustImage ? (
+          <EditorialImageBlock className="lg:hidden" entry={trustImage} sizes="100vw" />
+        ) : null}
         {tiles.map((tile) => (
           <div
             className="flex gap-4 rounded-[20px] border border-white/[0.07] bg-[color:rgba(18,23,34,0.55)] p-5 transition duration-200 hover:border-white/[0.11]"

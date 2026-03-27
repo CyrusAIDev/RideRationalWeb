@@ -74,6 +74,17 @@ This makes it easier for Cursor to stay grounded in the approved product and arc
 - `/founder/progress` provides an in-app founder view for the current milestone state
 - `15_QA_AND_TESTING_GUIDE.md` tracks manual QA expectations
 
+## Image workflow (marketing)
+
+RideRational uses a **typed image manifest** so photography stays attributable, swappable, and aligned with desktop vs. mobile crops.
+
+- **Manifest:** `src/content/image-library.ts` (`getImageBySlot`, `getCategoryCardImage`, `resolveImageSrc`)
+- **On-disk assets:** `public/images/{categories,editorial,scenarios,trust,placeholders}/`
+- **Process + licensing guardrails:** `22_IMAGE_STRATEGY_AND_ASSET_SYSTEM.md`
+- **Remote URLs:** keep `next.config.ts` `images.remotePatterns` curated; prefer local assets until a CDN is intentional
+
+Placeholders ship as neutral SVG slots under `public/images/placeholders/` so layouts reserve real photography without AI-generated imagery.
+
 ## How mock mode works
 
 Mock mode lets the frontend run without a real backend.

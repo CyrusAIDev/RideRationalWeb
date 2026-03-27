@@ -10,30 +10,30 @@ const steps: Array<{
   {
     icon: Sparkles,
     title: "Start with taste",
-    body: "Choose what excites you and how you think about buying—monthly, cash, or both.",
+    body: "What excites you—and how you buy: monthly, cash, or both.",
   },
   {
     icon: SlidersHorizontal,
-    title: "Set your comfort zone",
-    body: "We filter temptation: the point isn’t “cheapest”—it’s the right kind of special for your spend.",
+    title: "Comfort zone only",
+    body: "We filter temptation to your lane—not “cheapest,” but right-kind special.",
     highlight: true,
   },
   {
     icon: Mail,
-    title: "Get the daily shortlist",
-    body: "We hunt locally and email the strongest opportunities—clear framing, no marketplace marathon.",
+    title: "Daily shortlist",
+    body: "Local hunt, clear framing, in your inbox—no marketplace marathon.",
   },
 ];
 
 export function LandingHowItWorks() {
   return (
-    <div className="grid gap-5 lg:grid-cols-3 lg:gap-6">
+    <div className="grid gap-6 lg:grid-cols-3 lg:gap-8">
       {steps.map((step, index) => (
         <div
           className={
             step.highlight
-              ? "relative overflow-hidden rounded-[24px] border border-[color:rgba(184,145,70,0.32)] bg-[linear-gradient(185deg,rgba(184,145,70,0.12),rgba(11,13,18,0.96))] p-6 shadow-[0_28px_70px_rgba(0,0,0,0.38)] sm:p-7"
-              : "rounded-[24px] border border-white/[0.08] bg-[linear-gradient(180deg,rgba(255,255,255,0.04),rgba(11,13,18,0.94))] p-6 sm:p-7"
+              ? "relative overflow-hidden rounded-[24px] border border-[color:rgba(184,145,70,0.32)] bg-[color:rgba(18,23,34,0.65)] p-6 shadow-[0_28px_70px_rgba(0,0,0,0.38)] sm:p-7"
+              : "rounded-[24px] border border-white/[0.08] bg-[color:rgba(18,23,34,0.45)] p-6 sm:p-7"
           }
           key={step.title}
         >

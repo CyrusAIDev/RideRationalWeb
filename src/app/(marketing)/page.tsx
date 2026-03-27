@@ -10,56 +10,56 @@ import { LandingPricingTeaser } from "@/components/marketing/landing-pricing-tea
 import { LandingProductTruth } from "@/components/marketing/landing-product-truth";
 import { LandingTeaserInvite } from "@/components/marketing/landing-teaser-invite";
 import { LandingTrust } from "@/components/marketing/landing-trust";
+import { CategoryVisualCard } from "@/components/marketing/category-visual-card";
 import { FadeIn } from "@/components/motion/fade-in";
-import { Badge } from "@/components/ui/badge";
+import { SectionEyebrow } from "@/components/marketing/section-eyebrow";
+import { getCategoryCardImage } from "@/content/image-library";
 import { mockCategories } from "@/mocks/categories";
 
 export default function LandingPage() {
   return (
     <>
-      <SectionFrame className="pt-14 sm:pt-16 lg:pt-24">
+      <SectionFrame className="pt-16 sm:pt-20 lg:pt-28">
         <LandingHero />
       </SectionFrame>
 
-      <SectionFrame className="pt-0 lg:py-20">
-        <FadeIn>
-          <p className="mb-6 max-w-3xl text-lg leading-8 text-[color:var(--color-text-muted)] sm:text-xl sm:leading-8">
-            <span className="text-[color:var(--color-text)]">RideRational</span> is an email-first
-            concierge for desirable used cars—grounded in local listings, sweet-spot economics, and
-            categories where the emotional payoff is real.
-          </p>
+      <SectionFrame className="pt-8 lg:pt-12">
+        <FadeIn className="space-y-10">
+          <div className="max-w-2xl space-y-4">
+            <SectionEyebrow>What RideRational does</SectionEyebrow>
+            <h2 className="text-3xl font-semibold tracking-[-0.035em] text-white sm:text-4xl lg:text-[2.5rem] lg:leading-tight">
+              Email-first concierge. Local hunt. Sweet-spot lanes only.
+            </h2>
+          </div>
           <LandingProductTruth />
         </FadeIn>
       </SectionFrame>
 
       <SectionFrame>
-        <FadeIn className="space-y-10">
-          <div className="max-w-3xl space-y-4">
-            <Badge>Reframe the default</Badge>
+        <FadeIn className="space-y-12 lg:space-y-16">
+          <div className="max-w-2xl space-y-4">
+            <SectionEyebrow>Reframe the default</SectionEyebrow>
             <h2 className="text-3xl font-semibold tracking-[-0.035em] text-white sm:text-4xl lg:text-[2.5rem] lg:leading-tight">
               Boring default vs. sweet-spot used
             </h2>
-            <p className="text-base leading-7 text-[color:var(--color-text-muted)] sm:text-lg sm:leading-8">
-              The hook is contrast—without turning your life into a spreadsheet. We’re not promising
-              miracles; we’re hunting for overlap between what you want and what the market sometimes
-              hands to patient buyers.
+            <p className="max-w-xl text-base leading-7 text-[color:var(--color-text-muted)]">
+              Contrast without miracles—patient buyers sometimes get overlap between taste and the market.
             </p>
           </div>
           <LandingDefaultVsSweet />
         </FadeIn>
       </SectionFrame>
 
-      <SectionFrame className="texture-overlay">
+      <SectionFrame>
         <FadeIn>
-          <div className="grid gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-start lg:gap-14">
-            <div className="space-y-4 lg:sticky lg:top-28">
-              <Badge>Category-led taste</Badge>
-              <h2 className="text-3xl font-semibold tracking-[-0.035em] text-white sm:text-4xl">
-                Built for premium and performance lanes—not “anything used.”
+          <div className="grid gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start lg:gap-20">
+            <div className="space-y-5 lg:sticky lg:top-32">
+              <SectionEyebrow>Category-led taste</SectionEyebrow>
+              <h2 className="text-3xl font-semibold tracking-[-0.035em] text-white sm:text-4xl lg:text-[2.5rem] lg:leading-tight">
+                Six lanes. Premium and performance—not “anything used.”
               </h2>
-              <p className="text-base leading-7 text-[color:var(--color-text-muted)] sm:text-lg sm:leading-8">
-                Six starting categories. You can refine later—the goal here is recognition: this is a
-                product for people who care what they drive.
+              <p className="max-w-md text-base leading-7 text-[color:var(--color-text-muted)]">
+                Recognition over perfection—this is for people who care what they drive.
               </p>
               <Link
                 className="inline-flex text-sm font-medium text-[color:var(--color-accent-soft)] underline-offset-4 transition hover:text-white hover:underline"
@@ -68,29 +68,42 @@ export default function LandingPage() {
                 Begin taste-first discovery →
               </Link>
             </div>
-            <div className="grid gap-4 sm:grid-cols-2">
-              {mockCategories.categories.map((category) => (
-                <LandingCategoryCard
-                  description={category.short_description}
-                  id={category.id}
-                  key={category.id}
-                  title={category.label}
-                />
-              ))}
+            <div className="grid gap-5 sm:grid-cols-2">
+              {mockCategories.categories.map((category) => {
+                const image = getCategoryCardImage(category.id);
+                if (!image) {
+                  return (
+                    <LandingCategoryCard
+                      description={category.short_description}
+                      id={category.id}
+                      key={category.id}
+                      title={category.label}
+                    />
+                  );
+                }
+                return (
+                  <CategoryVisualCard
+                    description={category.short_description}
+                    image={image}
+                    key={category.id}
+                    title={category.label}
+                  />
+                );
+              })}
             </div>
           </div>
         </FadeIn>
       </SectionFrame>
 
       <SectionFrame id="how-it-works" className="scroll-mt-28">
-        <FadeIn className="space-y-10">
-          <div className="max-w-3xl space-y-4">
-            <Badge>How it works</Badge>
+        <FadeIn className="space-y-12 lg:space-y-16">
+          <div className="max-w-2xl space-y-4">
+            <SectionEyebrow>Mechanism</SectionEyebrow>
             <h2 className="text-3xl font-semibold tracking-[-0.035em] text-white sm:text-4xl">
-              Aspiration first. Proof next. Email as the habit.
+              Taste. Comfort zone. Daily email.
             </h2>
-            <p className="text-base leading-7 text-[color:var(--color-text-muted)] sm:text-lg sm:leading-8">
-              A tight path—so you never mistake this for another marketplace tab you have to babysit.
+            <p className="max-w-xl text-base leading-7 text-[color:var(--color-text-muted)]">
+              Not another marketplace tab to babysit.
             </p>
           </div>
           <LandingHowItWorks />
@@ -115,7 +128,7 @@ export default function LandingPage() {
         </FadeIn>
       </SectionFrame>
 
-      <SectionFrame className="pb-20 pt-8 lg:pb-28">
+      <SectionFrame className="pb-24 pt-8 lg:pb-36">
         <FadeIn>
           <LandingFinalCta />
         </FadeIn>

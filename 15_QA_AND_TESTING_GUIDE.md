@@ -40,20 +40,24 @@ Confirm:
 - verify there is one clear primary CTA
 - verify sections do not look like default Tailwind blocks
 - verify mobile and desktop spacing feel intentionally different
+- verify hero and category sections resolve imagery from `src/content/image-library.ts` (currently placeholders)
+- verify sections read image-forward: fewer dense paragraphs; stronger hierarchy
 
 ## `/discover`
-- verify progress indicator is visible
-- verify step order is category -> purchase mode -> budget -> market
-- verify the page does not ask monthly questions before purchase mode
-- verify CTA is always easy to find
-- verify category cards have clear selected states
+- verify progress indicator is visible for step 1
+- verify category step is image-led (not icon-only SaaS tiles)
+- verify copy does not ask monthly questions before purchase mode (purchase mode not routed yet—CTA stays disabled with honest footnote)
+- verify mobile sticky CTA does not cover the final row of cards (bottom padding / spacer present)
+- verify category cards are easy to tap on a phone
+- when multi-step routing lands later: step order must be category → purchase mode → budget → market
 
 ## `/teaser`
 - verify teaser looks like proof, not full product access
-- verify benchmark/default and sweet-spot contrast is legible
+- verify benchmark/default and sweet-spot contrast is legible (image split on larger breakpoints when assets are present)
 - verify local opportunity count is visible
 - verify locked details feel intentional
 - verify the CTA pushes toward signup/trial
+- verify mobile sticky trial CTA is reachable and not duplicative of destructive actions
 
 ## `/signup`
 - verify email/password validation works
@@ -116,6 +120,14 @@ Confirm:
 - no janky animations
 - images should have reserved slots
 - no huge layout shift on route load
+
+## Image manifest / asset checks
+
+- every visible marketing image maps to an entry in `src/content/image-library.ts`
+- placeholders are obviously neutral replacements—swap for real JPEG/WEBP under `public/images/...` per `22_IMAGE_STRATEGY_AND_ASSET_SYSTEM.md`
+- `alt` text is truthful (no fake VINs, no “your exact car” claims)
+- if introducing remote photography, `next.config.ts` `images.remotePatterns` must list only curated hostnames
+- attribution fields (`photographer`, `sourceUrl`, `license`) are filled before shipping non-proprietary photography
 
 ## Conversion sanity checks
 

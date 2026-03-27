@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1200" viewBox="0 0 900 1200" role="img" aria-label="Placeholder portrait photo slot">
+  <rect width="900" height="1200" fill="#121722"/>
+  <rect x="32" y="32" width="836" height="1136" fill="none" stroke="#657289" stroke-width="2" stroke-dasharray="14 10" rx="24" opacity="0.85"/>
+  <text x="450" y="580" text-anchor="middle" fill="#657289" font-family="ui-sans-serif, system-ui, sans-serif" font-size="18" letter-spacing="0.16em">
+    PLACEHOLDER · MOBILE CROP
+  </text>
+  <text x="450" y="618" text-anchor="middle" fill="#4a5568" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" letter-spacing="0.06em">
+    Tighter emotional crop for handheld
+  </text>
+</svg>

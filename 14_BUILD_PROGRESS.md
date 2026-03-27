@@ -1,10 +1,10 @@
 # Build Progress
 
 ## Overall progress
-**28% complete**
+**40% complete**
 
 ## Current milestone
-**Documentation system + frontend foundation**
+**Image-led marketing foundation + asset system**
 
 ## Milestone tracker
 
@@ -20,36 +20,35 @@
 - [x] Typed API contract shell
 - [x] Mock data system
 - [x] Founder progress route
-- [ ] Premium landing page implementation
-- [ ] Discovery flow implementation
-- [ ] Personalized teaser flow implementation
+- [x] Image manifest + `public/images` taxonomy + image-aware marketing components
+- [x] Landing, discover, and teaser visual refactor (editorial spacing, fewer text walls)
+- [ ] Full multi-step discovery flow (purchase mode, budget, market)
+- [ ] Personalized teaser generation UX polish
 - [ ] Auth and setup polish
 - [ ] Trial and billing UI polish
 - [ ] Account/settings polish
 - [ ] Hardening, QA pass, and performance refinement
 
 ## Current focus
-The repo is now ready for the first high-fidelity build milestone: the premium landing page.
+Replace placeholder SVGs with licensed real photography per `22_IMAGE_STRATEGY_AND_ASSET_SYSTEM.md`, then continue the discovery flow implementation.
 
 ## Next milestone
-**Build the premium landing page using the approved brand, desktop, and mobile blueprints.**
+**Implement the remaining discovery steps (purchase mode → comfort zone → market) without inventing backend behavior.**
 
 ## What to test next
-- route shells render correctly
-- global tokens feel consistent
-- founder progress route reflects milestone state
-- mock mode route wiring works
-- placeholder discovery and teaser pages establish the correct information hierarchy
+- landing hero and category grid resolve images from `image-library.ts`
+- teaser split media + narrative hierarchy read as proof, not dashboard inventory
+- discover flow thumb targets and mobile sticky CTA clearance
+- mock mode unchanged; lint + typecheck clean
+- `next.config.ts` `images.remotePatterns` still empty until founder adds curated hosts
 
 ## Founder notes
-This is the disciplined part of the build. The product now has a stable source of truth and a clean technical runway, which prevents messy redesign loops later.
+The marketing shell is now image-slot driven: typography and spacing were opened up, and gradients were reduced in favor of reserved photography planes. Keep swapping placeholders for real assets without touching route structure.
 
 ## Motivation snapshot
 You now have:
-- a real product definition
-- a real funnel definition
-- a real contract target
-- a real repo structure
-- a real next-step path
+- a typed, attributable image manifest
+- reusable editorial blocks wired to slots
+- marketing pages that align with desktop/mobile blueprints more faithfully
 
-That is the difference between a pretty mockup and a buildable product system.
+That keeps the build emotionally on-brief while staying honest about backend and licensing reality.

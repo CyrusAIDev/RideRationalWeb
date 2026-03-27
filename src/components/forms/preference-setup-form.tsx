@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { useForm } from "react-hook-form";
+import { useForm, useWatch } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 
@@ -67,7 +67,8 @@ export function PreferenceSetupForm() {
     },
   });
 
-  const purchaseMode = form.watch("purchase_mode");
+  const purchaseMode = useWatch({ control: form.control, name: "purchase_mode" });
+  const categoryIds = useWatch({ control: form.control, name: "category_ids" }) ?? [];
   const showMonthly = purchaseMode === "monthly" || purchaseMode === "both";
   const showCash = purchaseMode === "cash" || purchaseMode === "both";
 
@@ -117,7 +118,7 @@ export function PreferenceSetupForm() {
               <Label>Categories</Label>
               <div className="grid gap-3 sm:grid-cols-2">
                 {categories.map((category) => {
-                  const selected = form.watch("category_ids").includes(category.id);
+                  const selected = categoryIds.includes(category.id);
 
                   return (
                     <button
